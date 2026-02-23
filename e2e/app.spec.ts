@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('homepage loads with garden planner heading', async ({ page }) => {
+test('homepage loads the garden canvas', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: /garden planner/i })).toBeVisible();
+  await expect(page.getByTestId('garden-canvas')).toBeVisible();
 });
