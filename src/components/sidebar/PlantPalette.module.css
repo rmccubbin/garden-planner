@@ -1,0 +1,86 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: #f5fbf3;
+  border-right: 1px solid #c8dfc4;
+  padding: 12px;
+  gap: 8px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d4a28;
+  font-family: inherit;
+}
+
+.search {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #c8dfc4;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.search:focus {
+  outline: 2px solid #5a8a52;
+  outline-offset: 1px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  flex: 1;
+  padding: 4px;
+  border: 1px solid #c8dfc4;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.tab:hover {
+  background: #edf7ea;
+}
+
+.tabActive {
+  composes: tab;
+  background: #5a8a52;
+  color: #fff;
+  border-color: #5a8a52;
+}
+
+.grid {
+  flex: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  align-content: start;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #6a8a60;
+  font-size: 0.85rem;
+  padding: 16px 0;
+  font-family: inherit;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #5a8a52;
+  text-align: center;
+  font-family: inherit;
+}

@@ -15,11 +15,12 @@ test('canvas has non-zero dimensions', async ({ page }) => {
   expect(box!.height).toBeGreaterThan(0);
 });
 
-test('canvas fills the viewport', async ({ page }) => {
+test('canvas fills the available space (excluding sidebar)', async ({ page }) => {
   await page.goto('/');
   const canvas = page.getByTestId('garden-canvas');
   const box = await canvas.boundingBox();
   const viewport = page.viewportSize();
-  expect(box!.width).toBeCloseTo(viewport!.width, -1);
+  // Sidebar is 280px; canvas takes the remaining width
+  expect(box!.width).toBeGreaterThan(viewport!.width * 0.5);
   expect(box!.height).toBeCloseTo(viewport!.height, -1);
 });
